@@ -180,10 +180,10 @@ const Bond = () => {
       </Swiper>
       <div className="absolute z-[50] top-[50%] w-full">
         <div className="flex justify-between font-bold text-black">
-          <div className="p-1 text-2xl -translate-x-8 cursor-pointer swiper-button-prev h-fit">
+          <div className="lg:pl-0 pl-3  text-2xl -translate-x-8 cursor-pointer swiper-button-prev h-fit">
             <AiOutlineLeft />
           </div>
-          <div className="p-1 text-2xl translate-x-8 cursor-pointer swiper-button-next h-fit">
+          <div className="lg:pr-0 pr-3 text-2xl translate-x-8 cursor-pointer swiper-button-next h-fit">
             <AiOutlineRight />
           </div>
         </div>

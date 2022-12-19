@@ -54,14 +54,14 @@ const Cart = () => {
   };
 
   return (
-    <section className="padding pb-[4rem]">
+    <section className="padding pb-[4rem] pt-[8rem]">
       <div className="w-full ">
         {cartItems.length > 0 ? (
           <article className="flex flex-col w-full gap-4">
             {cartItems.map((item: any) => {
               return (
                 <div key={item.id}>
-                  <div className="flex justify-between items-center py-4 px-4 border rounded-[3px] border-[#417B13]">
+                  <div className="flex flex-col md:flex-row gap-5 justify-between items-center py-4 px-4 border rounded-[3px] border-[#417B13]">
                     <div className="flex items-center gap-3">
                       <input
                         className=" accent-[#417B13] "
@@ -93,7 +93,7 @@ const Cart = () => {
                       </button>
                     </div>
                     <div className="">
-                      <p className="text-[#B0B0B0] pb-2">Value (₦)</p>
+                      <p className="text-[#B0B0B0] pb-2 text-center lg:text-left">Value (₦)</p>
                       <div className="border rounded-[3px] border-[#417B13] flex px-3 py-2 gap-5">
                         <h3 className="font-semibold">
                           {`${item.price.toLocaleString()}.00`}
@@ -138,10 +138,10 @@ const Cart = () => {
                 </div>
               );
             })}
-            <div className="text-[#B0B0B0] w-full py-4 px-4 border rounded-[3px] border-[#417B13] pl-12">
+            <div className="text-[#B0B0B0] w-full py-4 px-4 border rounded-[3px] border-[#417B13] md:pl-12">
               <div className="flex items-center justify-between ">
-                <div className="flex justify-between w-full text-[14px]">
-                  <div className="flex gap-12">
+                <div className="flex justify-between w-full text-[.875rem]">
+                  <div className="flex lg:gap-12 gap-8">
                     <p className="flex items-center gap-1">
                       fees + Taxes <BiChevronDown />
                     </p>

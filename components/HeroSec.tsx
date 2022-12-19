@@ -53,21 +53,21 @@ const HeroSec = () => {
   };
 
   return (
-    <div>
+    <div className="pt-[8rem]">
       <div className="flex justify-between w-full ">
         <span className="bg-[#7E7C78] h-4 w-10"></span>
         <span className="bg-[#89B67C] h-4 w-10"></span>
       </div>
 
-      <article className="flex padding">
-        <div className="xl:w-[55%] w-[75%] pt-10 xl:pt-14">
-          <h2 className="xl:text-6xl lg:text-5xl md:text-3xl">
-            Subscribe to FG Saving Bond
+      <article className="flex flex-col padding lg:flex-row">
+        <div className="xl:w-[55%] lg:w-[75%] text-center lg:text-left pt-10 xl:pt-14">
+          <h2 className="text-4xl xl:text-6xl lg:text-5xl md:text-6xl">
+            Subscribe to FG Saving Bond.
           </h2>
           <p className="py-3 text-xl">Loan and get paid in Interest</p>
 
-          <div className="flex gap-4 pt-8 whitespace-nowrap">
-            <button className="text-white bg-[#417B13] px-6 py-2 rounded-[3px] flex gap-2 items-center font-semibold hover:bg-black transition-all duration-200">
+          <div className="flex justify-center gap-4 pt-8 whitespace-nowrap lg:justify-start">
+            <button className="text-white bg-[#417B13] px-6 py-2 rounded-[3px] flex gap-2 items-center font-semibold hover:bg-black transition-all duration-200 ">
               Get Started
               <span className="">
                 <AiOutlineArrowRight />
@@ -84,7 +84,9 @@ const HeroSec = () => {
             </button>
           </div>
         </div>
-        <div className={`w-[70rem] h-fit relative -translate-x-10 fade-in-fwd`}>
+        <div
+          className={`lg:w-[70rem] md:w-[40rem] h-fit relative -translate-x-10 fade-in-fwd mt-5 lg:mt-0`}
+        >
           {/* animate on each image change */}
           <Image
             src={slides[currentIndex].image}
@@ -94,12 +96,10 @@ const HeroSec = () => {
             className="fade-in-fwd"
           />
         </div>
-        <div className="flex flex-col justify-end">
+        <div className="flex-col justify-end hidden lg:flex ">
           <div className="pb-16">
-            {/* <div className={`${slides.length === 0 ? "block" : "hidden"}`}>
-              <BsChevronCompactLeft onClick={prevSlide} size={30} />
-            </div> */}
-            <div className="flex justify-end text-black font-bold">
+           
+            <div className="flex justify-end font-bold text-black">
               <BsChevronRight onClick={nextSlide} size={30} />
             </div>
             <div className="flex justify-center py-2">
@@ -147,7 +147,7 @@ export const Video = ({ setShowVid }: Func) => {
         >
           <AiFillCloseCircle />
         </button>
-        <div className="grid h-screen place-items-center  ">
+        <div className="grid h-screen place-items-center ">
           <div className="swing-in-top-fwd">
             <ReactPlayer
               url="https://www.youtube.com/watch?v=tRT_X_MJgic"

@@ -3,7 +3,7 @@ import Bond from "../components/Bond/Bond";
 
 const bond = () => {
   return (
-    <section className="padding pt-10 pb-[4rem]">
+    <section className="padding  pb-[4rem] pt-[10rem]">
       <Bond />
     </section>
   );
