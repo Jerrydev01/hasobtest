@@ -49,7 +49,7 @@ const navBar: IPropsNav[] = [
 
 const Header = ({ size, show, setShow, handleShow }: any) => {
   const { cartItems } = useSelector((state: any) => state.product);
- 
+
   const router = useRouter();
 
   //
@@ -83,10 +83,7 @@ const Header = ({ size, show, setShow, handleShow }: any) => {
             />
           </div>
         </Link>
-        <nav
-          onClick={() => setShow(!show)}
-          className={`items-center  gap-8 l lg:flex lg:h-fit `}
-        >
+        <nav className={`items-center  gap-8 l lg:flex lg:h-fit `}>
           <>
             <ul
               className={`absolute left-0 right-0  flex flex-col items-center gap-12 text-base font-bold lg:gap-5 lg:justify-between lg:static lg:flex-row top-24  ${
@@ -98,6 +95,7 @@ const Header = ({ size, show, setShow, handleShow }: any) => {
               {navBar.map((nav) => (
                 <li key={nav.id} className="inline-block whitespace-nowrap">
                   <Link
+                    onClick={() => setShow(!show)}
                     className={`hover:text-[#417B13] translate duration-150 lg:text-base text-2xl  ${
                       router.pathname === nav.link ? "text-[#417B13]" : ""
                     } ${
