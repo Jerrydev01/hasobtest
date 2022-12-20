@@ -254,8 +254,7 @@ a {
     opacity: 1;
   }
 }
-
-@media (min-width: 300px) {
+@media (max-width: 700px) {
   .padding {
     padding-inline: 1rem;
   }
@@ -263,12 +262,15 @@ a {
     background-image: none;
   }
 }
-@media (min-width: 640px) {
+
+@media (min-width: 300px) {
   .padding {
     padding-inline: 1rem;
   }
-  .backgroundImage {
-    background-image: none;
+}
+@media (min-width: 640px) {
+  .padding {
+    padding-inline: 1rem;
   }
 }
 @media (min-width: 768px) {
