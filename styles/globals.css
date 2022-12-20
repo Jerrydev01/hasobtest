@@ -263,16 +263,7 @@ a {
   }
 }
 
-@media (min-width: 300px) {
-  .padding {
-    padding-inline: 1rem;
-  }
-}
-@media (min-width: 640px) {
-  .padding {
-    padding-inline: 1rem;
-  }
-}
+
 @media (min-width: 768px) {
   .padding {
     padding-inline: 1rem;
