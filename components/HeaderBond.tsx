@@ -45,6 +45,7 @@ const HeaderBond = ({ size, show, setShow, handleShow }: any) => {
   return (
     <section className="">
       <header
+        style={{ background: "#ECFBEC", height: "6rem" }}
         className={`fixed top-0 left-0 right-0 flex items-center justify-between w-full py-4 lg:py-8  padding lg:bg-transparent h-fit z-[100]
         }`}
       >
@@ -72,10 +73,10 @@ const HeaderBond = ({ size, show, setShow, handleShow }: any) => {
         <nav className={`items-center  gap-8 l lg:flex lg:h-fit`}>
           <>
             <ul
-              className={`absolute left-0 right-0  flex flex-col items-center gap-12 text-base font-bold lg:gap-5 lg:justify-between lg:static lg:flex-row top-24  ${
+              className={`absolute left-0 right-0  flex flex-col items-center gap-12 text-base font-bold lg:gap-5 lg:justify-between lg:static lg:flex-row top-20  ${
                 show === true && size.width! < 1024
-                  ? "hidden  "
-                  : "block  bg-[#ECFBEC] lg:bg-transparent  h-screen lg:h-fit bounce-left"
+                  ? "hidden "
+                  : "block  bg-[#ECFBEC] lg:bg-transparent  h-screen lg:h-fit fade-in-fwd pt-10 pb-28 lg:py-10 overflow-auto lg:overflow-hidden "
               }`}
             >
               {navBar.map((nav) => (
@@ -83,16 +84,10 @@ const HeaderBond = ({ size, show, setShow, handleShow }: any) => {
                   <Link
                     onClick={() => setShow(!show)}
                     className={`hover:text-[#417B13] translate duration-150 lg:text-base text-2xl  ${
-                      router.pathname === nav.link ? "text-[#417B13]" : ""
-                    } ${
-                      nav.link === "/signup"
-                        ? "bg-black text-white px-6 py-3 rounded-[3px] hover:text-white"
-                        : ""
-                    }} ${
-                      nav.link === "/login"
-                        ? "border border-[#417B13] text-[#417B13] px-6 py-3 rounded-[3px]"
-                        : ""
-                    }}`}
+                      router.pathname === nav.link
+                        ? "text-[#000]"
+                        : "text-[#8A8A8A]"
+                    } `}
                     href={nav.link}
                   >
                     {nav.name}

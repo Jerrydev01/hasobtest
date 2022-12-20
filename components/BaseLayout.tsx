@@ -18,7 +18,7 @@ const BaseLayout = ({ children }: any) => {
   return (
     <section className="">
       <div className="">
-        {router.pathname === "/" || router.pathname === "/dmo" ? (
+        {router.pathname === "/" || router.pathname === "/signup" ? (
           <Header
             size={size}
             show={show}

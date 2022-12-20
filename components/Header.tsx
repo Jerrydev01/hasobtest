@@ -55,9 +55,10 @@ const Header = ({ size, show, setShow, handleShow }: any) => {
   //
 
   return (
-    <section className="">
+    <section>
       <header
-        className={`fixed top-0 left-0 right-0 flex items-center justify-between w-full py-4 lg:py-8  padding lg:bg-transparent h-fit z-50
+        style={{ background: "#ECFBEC", height: "6rem" }}
+        className={`fixed top-0 left-0 right-0 flex items-center justify-between w-full py-4 lg:py-8 padding h-fit z-50
         }`}
       >
         <Link className="hidden lg:block " href="/">
@@ -72,8 +73,8 @@ const Header = ({ size, show, setShow, handleShow }: any) => {
           </div>
         </Link>
         {/* mobile */}
-        <Link className="fixed w-full top-3 lg:hidden" href="/">
-          <div className="w-[80px]">
+        <Link className="fixed w-fit top-5 lg:hidden" href="/">
+          <div className="w-[60px]">
             <Image
               src={logoMobile}
               alt="logo"
@@ -86,10 +87,10 @@ const Header = ({ size, show, setShow, handleShow }: any) => {
         <nav className={`items-center  gap-8 l lg:flex lg:h-fit `}>
           <>
             <ul
-              className={`absolute left-0 right-0  flex flex-col items-center gap-12 text-base font-bold lg:gap-5 lg:justify-between lg:static lg:flex-row top-24  ${
+              className={`absolute left-0 right-0  flex flex-col items-center gap-12 text-base font-bold lg:gap-5 lg:justify-between lg:static lg:flex-row top-20  ${
                 show === true && size.width! < 1024
-                  ? "hidden  "
-                  : "block  bg-[#ECFBEC] lg:bg-transparent  h-screen lg:h-fit bounce-left"
+                  ? "hidden "
+                  : "block  bg-[#ECFBEC] lg:bg-transparent  h-screen lg:h-fit fade-in-fwd pt-10 pb-28 lg:py-10 overflow-auto lg:overflow-hidden "
               }`}
             >
               {navBar.map((nav) => (
@@ -101,8 +102,11 @@ const Header = ({ size, show, setShow, handleShow }: any) => {
                     } ${
                       nav.link === "/signup"
                         ? "bg-black text-white px-6 py-3 rounded-[3px] hover:text-white"
-                        : ""
-                    }} ${
+                        : "first-line:"
+                    }}
+                    // hide signup button on login page
+                  ${router.pathname.includes("/signup") && nav.link==="/signup" ? "hidden" : "block"}
+                    ${
                       nav.link === "/login"
                         ? "border border-[#417B13] text-[#417B13] px-6 py-3 rounded-[3px]"
                         : ""
@@ -129,7 +133,7 @@ const Header = ({ size, show, setShow, handleShow }: any) => {
                   : 0}
               </span>
             </Link>
-            <button onClick={handleShow} className="text-3xl lg:hidden">
+            <button onClick={handleShow} className="text-3xl lg:hidden ml-3">
               {show ? <AiOutlineMenu /> : <AiOutlineClose />}
             </button>
           </div>
