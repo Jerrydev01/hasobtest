@@ -29,6 +29,7 @@ a {
   text-decoration: none;
 }
 
+/* signup background image */
 .backgroundImage {
   background-image: url(../public/assets/image2.png),
     url(../public/assets/image1.png);
