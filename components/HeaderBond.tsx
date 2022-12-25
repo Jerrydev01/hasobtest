@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useWindowSize } from "../hooks/windowSize";
+import { RootState } from "../store/store";
 
 interface IPropsNav {
   id: number;
@@ -35,7 +36,7 @@ const navBar: IPropsNav[] = [
 ];
 
 const HeaderBond = ({ size, show, setShow, handleShow }: any) => {
-  const { cartItems } = useSelector((state: any) => state.product);
+  const { cartItems } = useSelector((state: RootState) => state.product);
 
 
   const router = useRouter();

@@ -1,8 +1,17 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
+interface FormProps {
+  firstName:string;
+  lastName:string;
+  password:string;
+  email:string;
+  checked: boolean;
+
+}
+
 const Signup = () => {
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormProps>({
     firstName: "",
     lastName: "",
     password: "",
@@ -16,11 +25,11 @@ const Signup = () => {
     e.preventDefault();
   };
 
-  const onChange = (e: any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  const onCheck = (e: any) => {
+  const onCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormState({ ...formState, [e.target.name]: e.target.checked });
   };
 

@@ -14,9 +14,10 @@ import {
 } from "../../store/features/productSlice";
 import Link from "next/link";
 import { formatMoney } from "../../utils/currencyFormatter";
+import { RootState } from "../../store/store";
 
 const Cart = () => {
-  const { cartItems } = useSelector((state: any) => state.product);
+  const { cartItems } = useSelector((state: RootState) => state.product);
 
   const [check, setCheck] = useState(true);
   const [showPay, setShowPay] = useState(false);
@@ -37,7 +38,10 @@ const Cart = () => {
 
   // delete item when checkbox is checked
 
-  const handleCheckbox = (e: any, id: any) => {
+  const handleCheckbox = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string
+  ) => {
     if (e.target.checked) {
       return null;
     } else {
@@ -93,7 +97,9 @@ const Cart = () => {
                       </button>
                     </div>
                     <div className="">
-                      <p className="text-[#B0B0B0] pb-2 text-center lg:text-left">Value (₦)</p>
+                      <p className="text-[#B0B0B0] pb-2 text-center lg:text-left">
+                        Value (₦)
+                      </p>
                       <div className="border rounded-[3px] border-[#417B13] flex px-3 py-2 gap-5">
                         <h3 className="font-semibold">
                           {`${item.price.toLocaleString()}.00`}

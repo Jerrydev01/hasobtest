@@ -1,4 +1,4 @@
-interface BondProps {
+export interface BondProps {
   id: number;
   tag: string;
   name: string;
